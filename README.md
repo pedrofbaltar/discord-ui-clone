@@ -21,7 +21,7 @@
 
 ## 📜 License
 
-Esse projeto está sob a licença do MIT. Veja o arquivo [LICENSE]()
+Esse projeto está sob a licença do MIT. Veja o arquivo [LICENSE](https://github.com/pedrofbaltar/discord-ui-clone/blob/master/LICENSE)
 
 <hr>
 
