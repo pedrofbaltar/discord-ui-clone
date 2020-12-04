@@ -1,0 +1,106 @@
+.channel-list {
+  grid-area: CL;
+
+  display: flex;
+  flex-direction: column;
+
+  padding: 24px 9.5px 0 16px;
+  background-color: $secondary;
+
+  .category {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-bottom: 6px;
+
+    span {
+      text-transform: uppercase;
+      font-size: 12px;
+      font-weight: 600;
+      color: $gray;
+
+      cursor: pointer;
+    }
+
+    i {
+      width: 21px;
+      height: 21px;
+
+      color: $symbol;
+
+      cursor: pointer;
+    }
+  }
+
+  .channel-button {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    cursor: pointer;
+
+    margin-top: 6px;
+    padding: 3px 6px;
+    border-radius: 5px;
+
+    background-color: transparent;
+
+    transition: background-color .2s;
+
+    i {
+      visibility: hidden;
+    }
+
+    &:hover, &.active {
+      background-color: $quinary;
+
+      .left span + span {
+        color: $white;
+      }
+
+      i {
+        visibility: visible;
+      }
+    }
+
+    .left, .right {
+      display: flex;
+      align-items: center;
+    }
+
+    .left {
+      span { // Hashtag
+        font-size: 24px;
+        color: $symbol;
+      }
+
+      span + span {
+        margin-left: 5px;
+
+        font-size: 15px;
+        color: $senary;
+      }
+    }
+
+    .right {
+      i { // Invite / Settings Icons
+        font-size: 18px;
+
+        color: $symbol;
+        
+        cursor: pointer;
+
+        transition: .2s;
+
+        &:hover {
+          color: $white;
+        }
+      }
+
+      i + i { // Settings Icon
+        margin-left: 4px;
+      }
+    }
+  }
+}

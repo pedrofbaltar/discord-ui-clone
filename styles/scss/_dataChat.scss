@@ -1,0 +1,157 @@
+.data-chat {
+  grid-area: CD;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  background-color: $primary;
+
+  .messages {
+    padding: 20px 0;
+
+    display: flex;
+    flex-direction: column;
+
+    max-height: calc(100vh - 46px - 68px); // 100vh - header - input
+
+    height: 100%;
+
+    overflow-y: scroll;
+    
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background-color: $tertiary;
+      border-radius: 4px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background-color: $secondary;
+    }
+
+    .channel-message {
+      display: flex;
+      align-items: center;
+
+      padding: 4px 16px;
+      margin-right: 4px;
+
+      background: transparent;
+
+      &.mention {
+        background-color: $mention-message;
+
+        border-left: 2px solid $mention-detail;
+        padding-left: 14px;
+      }
+
+      & + div {
+        margin-top: 13px;
+      }
+
+      .avatar {
+        width: 40px;
+        height: 40px;
+
+        background-color: $secondary;
+        border-radius: 50%;
+      }
+
+      &.bot {
+        .avatar {
+          background-color: $mention-detail;
+        }
+      }
+    }
+
+    .message {
+      min-height: 40px;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      margin-left: 17px;
+
+      .header {
+        display: flex;
+        align-items: center;
+
+        strong {
+          color: $white;
+          font-size: 16px;
+        }
+
+        span {
+          margin-left: 6px;
+
+          background-color: $discord;
+          color: $white;
+          border-radius: 4px;
+          padding: 4px 5px;
+
+          text-transform: uppercase;
+          font-weight: bold;
+          font-size: 11px;
+        }
+
+        .date {
+          margin-left: 6px;
+          color: $gray;
+          font-size: 13px;
+        }
+      }
+
+      .content {
+        text-align: left;
+        font-size: 16px;
+        color: $white;
+        margin-top: 5px;
+
+        span {
+          color: $discord;
+        }
+      }
+    }
+  }
+
+  .input-wrapper {
+    width: 100%;
+
+    padding: 0 16px;
+
+    input {
+      width: 100%;
+      height: 44px;
+
+      padding: 0 10px 0 57px;
+      border-radius: 7px;
+
+      font-size: 16px;
+      color: $white;
+      background-color: $chat-input;
+
+      position: relative;
+
+      &::placeholder {
+        color: $gray;
+      }
+    }
+
+    i {
+      position: relative;
+      top: -50%;
+      left: 14px;
+
+      transition: 180ms ease-in-out;
+
+      width: 24px;
+      height: 24px;
+
+      color: $gray;
+    }
+  }
+}

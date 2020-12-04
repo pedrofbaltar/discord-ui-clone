@@ -1,0 +1,29 @@
+.server-name {
+  grid-area: SN;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 12px 11px 12px 16px;
+  background-color: $secondary;
+
+  box-shadow: 0px 1px 0px 0px rgba(0, 0, 0, 0.2);
+  z-index: 2;
+
+  height: 100%;
+
+  h1 {
+    font-size: 16px;
+    font-weight: bold;
+
+    color: $white;
+  }
+
+  i {
+    width: 28px;
+    height: 28px;
+
+    color: $white;
+    cursor: pointer;
+  }
+}

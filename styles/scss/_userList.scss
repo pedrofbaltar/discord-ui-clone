@@ -1,0 +1,97 @@
+.user-list {
+  grid-area: UL;
+  
+  display: flex;
+  flex-direction: column;
+
+  padding: 3px 6px 0 16px;
+  background-color: $secondary;
+
+  max-height: calc(100vh - 46px); // 46px - Header
+  overflow-y: scroll;
+
+  ::-webkit-scrollbar {
+    width: 4px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: $tertiary;
+    border-radius: 4px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background-color: $secondary;
+  }
+
+  .role {
+    margin-top: 20px;
+    
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: 500;
+    color: $gray;
+  }
+
+  .user-row {
+    margin-top: 5px;
+    padding: 5px;
+
+    display: flex;
+    align-items: center;
+
+    cursor: pointer;
+
+    border-radius: 4px;
+    background: transparent;
+
+    transition: background .2s;
+
+    &:hover {
+      background: rgba(255, 255, 255, 0.1);
+    }
+
+    .avatar {
+      flex-shrink: 0;
+
+      width: 32px;
+      height: 32px;
+
+      border-radius: 50%;
+      background-color: $primary;
+    }
+
+    strong {
+      margin-left: 13px;
+      font-weight: 500;
+      color: $white;
+      opacity: 0.7;
+
+      white-space: nowrap; // Line break - false
+      text-overflow: ellipsis; // Pedro Balt...
+      overflow: hidden;
+    }
+
+    &:nth-last-child(1) {
+      margin-bottom: 20px;
+    }
+  }
+
+  .bot {
+    .avatar {
+      background-color: $mention-detail;
+    }
+
+    span {
+      margin-left: 9px;
+
+      background-color: $discord;
+      color: $white;
+      border-radius: 4px;
+      padding: 4px 5px;
+
+      text-transform: uppercase;
+      font-weight: bold;
+      font-size: 11px;
+    }
+  }
+}

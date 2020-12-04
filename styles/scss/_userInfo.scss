@@ -1,0 +1,88 @@
+.user-info {
+  grid-area: UI;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 10px;
+  background-color: $quaternary;
+  box-shadow: 0px 1px 0px 0px rgba(0, 0, 0, 0.2);
+
+  .profile {
+    display: flex;
+    align-items: center;
+
+    .avatar {
+      width: 32px;
+      height: 32px;
+
+      border-radius: 50%;
+      background-color: $gray;
+
+      position: relative;
+    }
+
+    .online { // User status
+      &::after {
+        background: $online; // Green
+        width: 12px;
+        height: 12px;
+  
+        position: absolute;
+        bottom: -4px;
+        right: -4px;
+
+        border-radius: 50%;
+        border: 4px solid $quaternary;
+
+        content: '';
+      }
+    }
+
+    .user-data {
+      margin-left: 8px;
+      
+      display: flex;
+      flex-direction: column;
+
+      strong {
+        font-size: 13px;
+        color: $white;
+
+        display: block;
+      }
+
+      span {
+        font-size: 13px;
+        color: $gray;
+      }
+    }
+  }
+
+  .icons {
+    display: flex;
+    align-items: center;
+
+    i {
+      font-size: 20px;
+      color: $white;
+      opacity: .7;
+
+      padding: 4px;
+      border-radius: 4px;
+
+      cursor: pointer;
+
+      transition: background-color .2s;
+
+      &:hover {
+        background-color: $primary;
+      }
+    }
+
+    i:not(:first-child) {
+      margin-left: 6px;
+    }
+  }
+}
